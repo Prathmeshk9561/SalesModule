@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background-color: #2e38532c;
+}
+.container{
+
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    letter-spacing: 2px;
+    background-color: #1A2238;
+    color: #fff;
+    margin-bottom: 40px;
+ 
+ }
+ .header img{
+     width: 50px;
+     border-radius: 7px;
+     margin-right: 15px;
+ }
+.header .left{
+    display: flex;
+    align-items: center;
+}
+
+.header .right a{
+    text-decoration: none;
+    color:#1A2238;
+    background-color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.expbtn{
+    background-color: #1A2238;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+   margin-top: 70px;
+   margin-left: 50px;
+   
+}
+
+
+.head-title{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+
+.outer-wrapper {
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* border: 1px solid black; */
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
+    max-width: 100%;
+    max-height: fit-content;
+    background-color: #fff;
+
+    
+}
+.table-wrapper {
+
+    /* overflow-y: scroll; */
+    overflow-x:scroll;
+    height: fit-content;
+    /* max-height: 66.4vh; */
+    
+    margin-top: 22px;
+    
+    margin: 25px;
+    padding-bottom: 20px;
+    
+}
+
+
+table {
+    
+    min-width: max-content;
+    
+    border-collapse: separate;
+    border-spacing: 0px;    
+    
+}
+
+.table-filter {
+    border-radius: 5px;
+}
+
+table th{
+    position: sticky; 
+    top: 0px;
+    background-color: #1A2238;
+    color: rgb(241, 245, 179);
+    text-align: center;
+    font-weight: normal;
+    font-size: 16px;
+    outline: 0.7px solid black;
+    border: 1.5px solid black;
+    
+
+} 
+
+.spacer{
+    height: 30px;
+}
+
+
+table th, table td {
+    
+    padding: 10px;
+    
+}
+
+table td {
+    text-align: left;
+    
+    font-size: 15px;
+    border: 1px solid rgb(177, 177, 177);
+    padding-left: 20px;
+    
+}
+@media screen and (max-width: 480px) {
+    .header h1{
+      font-size: 20px;
+   }
+   .header .right{
+      font-weight: 200;
+      font-size: 12px;
+   }
+    .box{
+     width: 300px;
+    }
+    #btn{
+     left: 130px;
+    }
+    table th, table td {
+    
+        padding: 5px;
+        
+    }
+   }
+

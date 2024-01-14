@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.spacer{
+  height: 30px;
+}
+body {
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: ghostwhite;
+}
+
+.header{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 15px;
+  letter-spacing: 2px;
+  background-color: #1A2238;
+  color: #fff;
+  margin-bottom: 40px;
+
+}
+.header img{
+   width: 50px;
+   border-radius: 7px;
+   margin-right: 15px;
+}
+.header .left{
+  display: flex;
+  align-items: center;
+}
+
+.header .right a{
+  text-decoration: none;
+  color:#1A2238;
+  background-color: #fff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.container {
+  position: relative;
+  max-width: 600px;
+  width: 93%;
+  margin: auto;
+  background: #2e38532c;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .seg-box {
+  margin-top: 20px;
+}
+.seg-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.seg-option, .segment) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .segment {
+  column-gap: 5px;
+}
+.segment input {
+  accent-color: #1A2238;
+}
+.form :where(.segment input, .segment label) {
+  cursor: pointer;
+}
+.segment label {
+  color: #707070;
+}
+
+.form #div1{
+  width: 100%;
+  margin-top: 20px;
+}
+.form :where(#div1 input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0 15px;
+  }
+
+  .form #div2{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .form :where(#div2 input, .select-box) {
+      position: relative;
+      height: 50px;
+      width: 100%;
+      outline: none;
+      font-size: 1rem;
+      color: #707070;
+      margin-top: 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 0 15px;
+  }
+
+  .form #div3{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .form :where(#div3 input, .select-box) {
+      position: relative;
+      height: 50px;
+      width: 100%;
+      outline: none;
+      font-size: 1rem;
+      color: #707070;
+      margin-top: 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 0 15px;
+  }
+
+  .form #div4{
+    width: 100%;
+    margin-top: 20px;
+  }
+  .form :where(#div4 input, .select-box) {
+      position: relative;
+      height: 50px;
+      width: 100%;
+      outline: none;
+      font-size: 1rem;
+      color: #707070;
+      margin-top: 8px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 0 15px;
+    }
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #1A2238;
+}
+.form button:hover {
+  background: #101f4a;
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.seg-option, .segment) {
+    row-gap: 15px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header h1{
+    font-size: 20px;
+ }
+ .header .right{
+    font-weight: 200;
+    font-size: 12px;
+ }
+  .box{
+   width: 300px;
+  }
+  #btn{
+   left: 130px;
+  }
+
+ }

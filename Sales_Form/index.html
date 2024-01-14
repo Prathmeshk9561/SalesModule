@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./log.css">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Sewacity</title>
+</head>
+<body>
+    <div class="header">
+        <img src="./logo.png" alt="">
+        <h1>SEWACITY</h1>
+    </div>
+   
+ <div class="container">
+  
+    <div class="box">
+        <!------------------ Login Box --------------------->
+        <div class="box-cityhead" id="cityhead">
+
+            <div class="top-header">
+                <h3>CITY HEAD LOGIN</h3>
+                <small>We are happy to have you back.</small>
+            </div>
+            <div class="input-group">
+                <div class="input-field">
+                    <input type="text" class="input-box" id="ch_id" required>
+                    <label for="ch_id">User Id</label>
+                </div>
+              
+                <div class="input-field">
+                    <input type="password" class="input-box" id="ch_Password" required>
+                    <label for="ch_Password">Password</label>
+                     <div class="eye-area">
+                            <div class="eye-box" onclick="chead_Password()">
+                                <i class="fa-regular fa-eye" id="eye"></i>
+                                <i class="fa-regular fa-eye-slash" id="eye-slash"></i>
+                            </div>
+                     </div>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="formCheck" class="check">
+                    <label for="formCheck"> Remember Me</label>
+                </div>
+                <div id="invalid_cityhead" style="display: none;">
+                    <h4>Invalid Username Password</h4>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="input-submit" value="Log In" onclick="fetch_api_cityhead()">
+                   
+                </div>
+            </div>
+
+        </div>
+
+
+      
+     <div class="box-admin" id="admin">
+
+        <div class="top-header">
+            <h3>ADMIN LOGIN</h3>
+            <small>We are happy to have you with us.</small>
+        </div>
+        <div class="input-group">
+            <div class="input-field">
+                <input type="text" class="input-box" id="admin_id" required>
+                <label for="admin_id">User Id</label>
+            </div>
+          
+            <div class="input-field">
+                <input type="password" class="input-box" id="admin_Password" required>
+                <label for="admin_Password">Password</label>
+                 <div class="eye-area">
+                        <div class="eye-box" onclick="admin_Password()">
+                            <i class="fa-regular fa-eye" id="eye-2"></i>
+                            <i class="fa-regular fa-eye-slash" id="eye-slash-2"></i>
+                        </div>
+                 </div>
+            </div>
+            <div class="remember">
+                <input type="checkbox" id="formCheck-2" class="check">
+                <label for="formCheck-2"> Remember Me</label>
+            </div>
+            <div id="invalid_admin" style="display: none;">
+                <h4>Invalid Username Password</h4>
+            </div>
+            <div class="input-field">
+            <input type="submit" class="input-submit" value="Log In" onclick="fetch_api_admin()">
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!------------------------ Switch -------------------------->
+      
+    <div class="switch">
+
+        <a href="#" class="cityhead" onclick="cityhead()">City Head</a>
+        <a href="#" class="admin" onclick="admin()">Admin</a>
+       
+
+        <div class="btn-active" id="btn"></div>
+    </div>
+
+    </div>
+ </div>
+ <div class="spacer"></div>
+<script>
+
+     var x = document.getElementById('cityhead');
+     var y = document.getElementById('admin');
+     var z = document.getElementById('btn');
+ 
+     function cityhead(){
+        x.style.left = "27px";
+        y.style.right = "-350px";
+        z.style.left = "0px";
+     }
+     function admin(){
+        x.style.left = "-350px";
+        y.style.right = "25px";
+        z.style.left = "50%";
+     }
+
+   // view password code
+   
+   
+   function chead_Password(){
+
+    var a = document.getElementById('ch_Password');
+    var b = document.getElementById('eye');
+    var c = document.getElementById('eye-slash');
+
+    if(a.type === "password"){
+        a.type = "text"
+        b.style.opacity = "0";
+        c.style.opacity = "1";
+
+    }else{    
+        a.type = "password"
+        b.style.opacity = "1";
+        c.style.opacity = "0";
+
+    }
+
+   }
+
+//    fetch data and pass to server
+async function fetch_api_cityhead() {
+
+    let userid=document.getElementById('ch_id').value;
+    let password=document.getElementById('ch_Password').value;
+
+    const dataToSend = {
+   userid:userid,
+   password:password,
+   role:"cityhead",
+  };
+
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataToSend)
+  };
+
+  let result=await fetch('login.php', requestOptions)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+      return data;
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+    if(result.result==1) {
+        window.location.replace("http://localhost/sales_form/city_head_client.php");
+        document.getElementById("invalid_cityhead").innerText="Login success"
+        document.getElementById("invalid_cityhead").style.display="block";
+    }else{
+        document.getElementById("invalid_cityhead").innerText="Invalid Username password"
+        document.getElementById("invalid_cityhead").style.display="block";
+    }
+    // console.log(result)
+    
+}
+
+//    fetch data and pass to server
+async function fetch_api_admin() {
+
+let userid=document.getElementById('admin_id').value;
+let password=document.getElementById('admin_Password').value;
+
+const dataToSend = {
+userid:userid,
+password:password,
+role:"admin",
+};
+
+const requestOptions = {
+method: 'POST',
+headers: {
+  'Content-Type': 'application/json'
+},
+body: JSON.stringify(dataToSend)
+};
+let result=await fetch('login.php', requestOptions)
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+  return data;
+
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+if(result.result==1) {
+    window.location.replace("http://localhost/sales_form/admin.php");
+    document.getElementById("invalid_admin").innerText="Login success"
+    document.getElementById("invalid_admin").style.display="block";
+}else{
+    document.getElementById("invalid_admin").innerText="Invalid Username password"
+    document.getElementById("invalid_admin").style.display="block";
+}
+// console.log(result)
+
+}
+   
+   
+   function admin_Password(){
+
+var d = document.getElementById('admin_Password');
+var b = document.getElementById("eye-2");
+var c = document.getElementById("eye-slash-2");
+
+if(d.type === "password"){
+    d.type = "text"
+    b.style.opacity = "0";
+    c.style.opacity = "1";
+
+}else{    
+    d.type = "password"
+    b.style.opacity = "1";
+    c.style.opacity = "0";
+
+}
+
+}
+</script>
+</body>
+</html>
