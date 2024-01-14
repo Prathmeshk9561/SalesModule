@@ -5,11 +5,7 @@ The Sales Module is a web application developed using PHP, HTML, CSS, and JavaSc
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+<a href"https://sewacity.com/sales_form/">Live Project Demo</a>
 
 ## Features
 
