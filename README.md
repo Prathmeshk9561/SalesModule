@@ -1,11 +1,12 @@
-# Sales Module Project
+# Sales Module
 
 The Sales Module is a web application developed using PHP, HTML, CSS, and JavaScript. It serves as a client management system for storing information about the clients of a company, including their total records.
 
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-<a href"https://sewacity.com/sales_form/">Live Project Demo</a>
+<br>
+<a href="https://sewacity.com/sales_form/">Live Project Demo</a>
 
 ## Features
 
